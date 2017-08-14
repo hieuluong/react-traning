@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+#clover-header {
+  background-color: var(--mdc-theme-background);
+  color: var(--mdc-theme-text-primary-on-background);
+}
+
+#clover-header .mdc-toolbar__section {
+  overflow: visible;
+}
+
+#clover-logo {
+  background: url(/images/logo.png) left center no-repeat;
+  background-size: contain; 
+  width: 100%;
+  height: 100%;
+}
+
+/* Hide actual text for screen readers */
+#clover-logo > span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+#clover-nav-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 40px;
+  text-decoration: none;
+}
+
+#clover-nav-icon:visited,
+#clover-nav-icon:active,
+#clover-nav-icon:focus {
+  color: var(--mdc-theme-text-primary-on-background);
+}
+
+.notify {
+    position: fixed;
+    top: 80px;
+    z-index: 9999;
+    right: 80px;
+    height: 100px;
+    font-weight: bold;
+}
+
+.card {
+  margin-bottom: 15px;
+}
+
+
