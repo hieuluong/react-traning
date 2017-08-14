@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Product from './components/Product.js';
+import ProductDetail from './components/ProductDetail.js';
 import Basket from './components/Basket.js';
 import Order from './components/Order.js'
 import registerServiceWorker from './registerServiceWorker';
@@ -55,6 +56,7 @@ const Main = () => (
   <main>
     <Switch>
       <Route exact path='/' component={Product} />
+      <Route path='/product/:id' component={ProductDetail} />
       <Route path="/basket" component={Basket} />
       <Route path="/order/:id" component={Order} />
     </Switch>

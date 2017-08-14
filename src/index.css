@@ -58,4 +58,16 @@ body {
   margin-bottom: 15px;
 }
 
+.product__detail .row {
+  height: 50px;
+}
+
+.product__detail .row .desc {
+  height: 100%;
+}
+
+.card-block .row {
+  height: auto;
+}
+
 
