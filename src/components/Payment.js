@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import request from 'superagent';
 import Config from '../models/Config.js'
 import Notify from './Notify.js'
 
-class Basket extends Component {
+class Basket extends PureComponent {
     constructor(props) {
         super(props);
 

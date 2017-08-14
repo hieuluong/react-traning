@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 import request from 'superagent';
 import Config from '../models/Config.js'
 import Notify from './Notify.js'
 import Payment from './Payment.js'
 
-class AddToBasket extends Component {
+class AddToBasket extends PureComponent {
     constructor(props) {
         super(props);
 
@@ -51,7 +51,7 @@ class AddToBasket extends Component {
 
     render() {
         return (
-            <button type="button" class="btn btn-primary" onClick={() => this.add()}>
+            <button type="button" className="btn btn-primary" onClick={() => this.add()}>
                 ADD TO BASKET
             </button>
         );

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { Component , PureComponent } from "react";
 import ReactDOM from 'react-dom';
 import Config from '../models/Config.js'
+import AddToBasket from '../components/AddToBasket.js'
 import request from 'superagent';
 
-class Product extends React.Component {
+class Product extends Component {
     constructor(props) {
         super(props);
         this.products = [];
@@ -57,19 +58,19 @@ class Product extends React.Component {
                 <div className="row">
                     {
                         this.state.products.map((item, index) => (
-                            <div className="col-md-4" key={item.productId}>
-                                <div className="panel panel-default">
-                                    <div className="panel-heading">
+                            <div className="col-md-3" key={item.productId}>
+                                <div className="card">
+                                    <div className="card-header">
                                         <strong>{item.name}</strong>
-                                        <span className="badge danger float-right">￥ {item.price}</span>
+                                        <span className="badge badge-pill badge-danger float-right price">￥ {item.price}</span>
                                     </div>
-                                    <div className="panel-body text-center">
-                                        {/* <Link to={"product/" + p.productId}> */}
+                                    <div className="card-block productImage">
+                                        {/* <Link to={"productdetail/" + p.productId}> */}
                                         <img src={item.imageUrl} className="img-thumbnail" />
                                         {/* </Link> */}
                                     </div>
-                                    <div className="panel-footer text-right">
-                                        {/* <Link to={"product/" + item.productId} className="btn btn-primary">Add to basket</Link> */}
+                                    <div className="card-footer text-right">
+                                        <AddToBasket product={item}></AddToBasket>
                                     </div>
                                 </div>
                             </div>
