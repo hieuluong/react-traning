@@ -1,5 +1,6 @@
 import React, { Component , PureComponent } from "react";
 import ReactDOM from 'react-dom';
+import { Link } from "react-router-dom";
 import Config from '../models/Config.js'
 import AddToBasket from '../components/AddToBasket.js'
 import request from 'superagent';
@@ -19,7 +20,7 @@ class Product extends Component {
     componentDidMount() {
         var self = this;
 
-        request.post(Config.product).send({ categories: [], name: "" }).end(function (err, res) {
+        request.post(Config.product + "/search").send({ categories: [], name: "" }).end(function (err, res) {
             if (err) {
                 alert(err.message);
             }
@@ -65,9 +66,9 @@ class Product extends Component {
                                         <span className="badge badge-pill badge-danger float-right price">￥ {item.price}</span>
                                     </div>
                                     <div className="card-block productImage">
-                                        {/* <Link to={"productdetail/" + p.productId}> */}
+                                         <Link to={"/product/" + item.productId}> 
                                         <img src={item.imageUrl} className="img-thumbnail" />
-                                        {/* </Link> */}
+                                         </Link> 
                                     </div>
                                     <div className="card-footer text-right">
                                         <AddToBasket product={item}></AddToBasket>

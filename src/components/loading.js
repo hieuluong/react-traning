@@ -1,3 +1,4 @@
+import ReactDOM from 'react-dom';
 import React, { Component, PureComponent } from "react";
 import "./loading.css";
 
@@ -9,8 +10,8 @@ class Loading extends PureComponent {
    }
 
    componentDidMount() {
-      var parent = this._reactInternalInstance._currentElement._owner._instance;
-      console.log(parent);
+      var parent = ReactDOM.findDOMNode(this).parentNode;
+      parent.style.position = "relative";
    }
 
    render() {

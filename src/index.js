@@ -14,9 +14,9 @@ import Notify from './components/Notify.js'
 import Config from './models/Config.js'
 import registerServiceWorker from './registerServiceWorker';
 import Loading from './components/loading.js'
+import LoadingModel from "./models/loading";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.js";
-import LoadingModel from "./models/loading";
 
 const Root = () => (
    <div>
@@ -81,7 +81,7 @@ class Main extends Component {
    constructor(props) {
       super(props);
       this.state = {
-         isLoading: false
+         isLoadingAll: false
       };
    }
 
@@ -89,7 +89,7 @@ class Main extends Component {
       LoadingModel.on("change", () => {
          console.log("Loading change");
          this.setState({
-            isLoading: LoadingModel.isLoading
+            isLoadingAll: LoadingModel.isLoadingAll
          })
       });
    }
@@ -104,8 +104,7 @@ class Main extends Component {
                <Route path="/order/:id" component={Order} />
                <Route path="/account" component={AccountProfile} />
             </Switch>
-            isLoading: {this.state.isLoading + ""}
-            {this.state.isLoading && <Loading />}
+            {this.state.isLoadingAll && <Loading />}
             <Notify />
          </main>
       );

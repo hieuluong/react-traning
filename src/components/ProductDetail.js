@@ -15,7 +15,7 @@ class ProductDetail extends Component {
       var id = self.props.match.params.id;
       if (id === null || isNaN(id)) return alert("Invalid parameters");
 
-      request.get(Config.product_detail + id).send().end(function (err, res) {
+      request.get(Config.product + "/" + id).send().end(function (err, res) {
          if (err) return alert(err.message);
          var data = res.body;
          if (data === null) return alert("Product not found !");
