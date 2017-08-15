@@ -176,3 +176,9 @@ span.danger {
   background-color: #367115;   
 }
 
+.tab-pane {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 24px;
+  position: relative;
+}
