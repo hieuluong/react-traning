@@ -148,7 +148,7 @@ class AccountProfile extends Component {
                      {
                         this.state.orders.map((o, i) => (
                            <tr key={i}>
-                              <th scope="row">{i + 1}</th>
+                              <th scope="row">{i+1}</th>
                               <td>
                                  <span className="float-right">{o.orderId}</span>
                               </td>
